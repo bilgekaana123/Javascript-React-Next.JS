@@ -44,3 +44,12 @@ console.log(person);
 
 person.email = 'brad@gmail.com';
 console.log(person);
+
+// Declare multiple values at once
+let a, b, c;
+
+const 
+    d = 10,
+    e = 20;
+
+console.log(d, e);
