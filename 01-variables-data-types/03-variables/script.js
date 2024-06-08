@@ -1,7 +1,7 @@
 
 // Ways to declare a variable
 // var, let, const
-// use Const unless you reassign use Let.
+// use const unless you reassign use let.
 
 let firstName = 'John';
 let lastName = 'Doe';
