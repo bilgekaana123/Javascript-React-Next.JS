@@ -36,11 +36,11 @@ console.log(loginUser(user));
 console.log(loginUser({ id: 2, name: 'Sara' }));
 
 // Arrays as params
-function getRandom(...arr) {
+function getRandom(arr) {
    const randomIndex = Math.floor(Math.random() * arr.length);
    const item = arr[randomIndex];
 
    console.log(item);
 }
 
-getRandom(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
