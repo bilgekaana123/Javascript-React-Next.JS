@@ -9,20 +9,25 @@ console.log(listItems[1].innerText);
 // Setting a color for specific element
 listItems[1].style.color = 'red';
 
+// forEach() if you want to change all elements
+listItems.forEach((item) => {
+   item.style.color = 'red';
+});
+
 // We can use forEach() on a NodeList
 listItems.forEach((item, index) => {
-  item.style.color = 'red';
+   item.style.color = 'red';
 
-  if (index === 1) {
-    item.remove();
-  }
+   if (index === 1) {
+      item.remove();
+   }
 
-  if (index === 0) {
-    item.innerHTML = ` Oranges
+   if (index === 0) {
+      item.innerHTML = ` Oranges
     <button class="remove-item btn-link text-red">
       <i class="fa-solid fa-xmark"></i>
     </button>`;
-  }
+   }
 });
 
 // getElementsByClassName()
@@ -35,7 +40,7 @@ console.log(listItems2[2].innerText);
 const listItemsArray = Array.from(listItems2);
 
 listItemsArray.forEach((item) => {
-  console.log(item.innerText);
+   console.log(item.innerText);
 });
 
 // getElementsByTagName()
