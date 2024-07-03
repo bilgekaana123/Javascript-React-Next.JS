@@ -1,21 +1,42 @@
 let x;
 
-const arr = [34, 55, 95, 20, 15];
+const arr = [28, 38, 44, 29, 109];
 
-// arr.push(100); 
-// arr.pop();
+// push() - Push a value on to the end of the array
+arr.push(100);
 
-// arr.unshift(99);
-// arr.shift();
+// pop() - Take the last value off
+arr.pop();
 
-// arr.reverse();
+// unshift() - Add a value to the beginning of the array
+arr.unshift(99);
 
-// x = arr.includes(55);
-// x = arr.indexOf(55);
-// x = arr.slice(2,4);    // This doesn't change arr
-// x = arr.splice(1, 3);  // This changes arr
+// shift() - Remove first value
+arr.shift();
 
-x = arr.splice(1, 4).reverse().toLocaleString().charAt(0);
+// reverse() - Reverse an array
+arr.reverse();
 
+// includes() - Check to see if something is in the array
+x = arr.includes(445);
+
+// indexOf() - Return the index of the first match
+x = arr.indexOf(28);
+
+// Return array as a string
+x = arr.toString();
+x = arr.join();
+
+// slice() returns selected elements in an array, as a new array. Slice takes in the index of the first element and the index of the last element to be included in the new array.
+x = arr.slice(1, 4);
+
+// splice() works like slice() except it takes the index of the first element and the number of elements after that as a second argument. it also mutates the original array where slice() does not
+x = arr.splice(1, 4);
+
+// Remove a single element/value - The following will mutate the original array by taking out the element with the index of 4. x will be equal to a new array with that plucked out value.
+x = arr.splice(4, 1);
+
+// Chaining methods - Some methods can be chained depending on the return value.
+x = arr.slice(1, 4).reverse().toString().charAt(0);
 
 console.log(x);

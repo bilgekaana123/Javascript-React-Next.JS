@@ -1,41 +1,60 @@
-
 let x;
-const name = 'John';
-const age = 30;
-x = 'Hello, my name is ' + name + 'and I am ' 
-+ age + ' years old';
 
-// Template Literals use back ticks (``)
+const name = 'John';
+const age = 31;
+
+// Concatenation
+x = 'Hello, my name is ' + name + ' and I am ' + age + ' years old';
+
+// Template Literals
 x = `Hello, my name is ${name} and I am ${age} years old`;
-console.log(x);
 
 // String Properties and Methods
-const s = 'Hello World'
-x = s.length;
-x = s[0];
-x = s.charAt(0);
 
+// Creating a "string object" (JS does this automatically when using a propery or method on a primitive string)
+const s = new String('Hello World');
+
+x = typeof s;
+
+x = s.length;
+
+// Access value by key
+x = s[0];
+
+// Shows the prototype of the string object. Shows the properties and methods
+x = s.__proto__;
+
+// Change case
 x = s.toUpperCase();
 x = s.toLowerCase();
 
-x = s.indexOf('e');
+// charAt() - returns the character at the specified index
+x = s.charAt(0);
 
-x = s.substring(0, 4);
+// indexOf - returns the index of the first occurrence of a specified value in a string
+x = s.indexOf('d');
+
+// substring() - search a string for a specified value
+x = s.substring(2, 5);
 x = s.substring(7);
 
-x = s.slice(2, 5);
+// slice() - extracts a part of a string and returns a new string
+x = s.slice(-11, -6);
 
-x = '             Hello World'
-x = s.trim();
+// trim() - remove whitespace from beginning and end of string
+x = '         Hello World';
+x = x.trim();
 
+// replace() - replace all instances of a string
 x = s.replace('World', 'John');
-x = s.includes('World');
+
+// includes() - returns true if the string is found
+x = s.includes('Hell');
+
+// valueOf() - returns the primitive value of a variable
 x = s.valueOf();
 
-x = s.split(' ');
+// split() - returns an array of strings
+x = s.split('');
 
 console.log(x);
-
-
-
-
