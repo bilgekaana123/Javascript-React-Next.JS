@@ -6,46 +6,85 @@
 // - undefined
 // - NaN
 
-const x = '';
+// Truthy Values:
+// - Everything else that is not falsy
+// - true
+// - '0' (0 in a string)
+// - ' ' (space in a string)
+// - 'false' (false in a string)
+// - [] (empty array)
+// - {} (empty object)
+// - function () {} (empty function)
+
+const x = function () {};
 
 if (x) {
-   console.log('This is truthy');
+  console.log('This is truthy');
 } else {
-   console.log('This is falsy');
+  console.log('This is falsy');
 }
 
 console.log(Boolean(x));
 
-// Others are Truthy
-
 // Truthy and falsy caveats
-const children = 2;
+const children = 3;
 
-if (children !== undefined) {
-   console.log(`You have ${children} children`);
+// Checking for literal 0
+if (children) {
+  console.log(`You have ${children} children`);
 } else {
-   console.log('Please enter number of children');
+  console.log('Please enter number of children');
 }
 
-// Checking for empthy arrays
-const posts = [];
+// Solution
+if (!isNaN(children)) {
+  console.log(`You have ${children} children`);
+} else {
+  console.log('Please enter number of children');
+}
 
+// Checking for empty arrays
+const posts = ['Post One'];
+
+// Always true even when empty
+if (posts) {
+  console.log('List Posts');
+} else {
+  console.log('No Posts To List');
+}
+
+// Solution
 if (posts.length > 0) {
-   console.log('List Posts');
+  console.log('List Posts');
 } else {
-   console.log('No Posts');
+  console.log('No Posts To List');
 }
 
-// Checking for empthy objects
-const user = {};
+// Checking for empty objects
+const user = {
+  name: 'Brad',
+};
 
-if (Object.keys(user).length > 0) {
-   console.log('List user');
+// Always true, even when no properties
+if (user) {
+  console.log('List User');
 } else {
-   console.log('No User');
+  console.log('No User');
+}
+
+// Solution
+if (Object.keys(user).length > 0) {
+  console.log('List User');
+} else {
+  console.log('No User');
 }
 
 // Loose Equality (==)
-console.log(false === 0);
-console.log('' === 0);
-console.log(null === undefined);
+console.log(false == 0); // true
+console.log('' == 0); // true
+console.log(null == undefined); // true
+
+// Strict Equality
+console.log(false === 0); // false
+console.log('' === 0); // false
+console.log(null === undefined); // false

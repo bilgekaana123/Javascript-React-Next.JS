@@ -1,28 +1,40 @@
 const x = 100;
-const foo = 1;
-var bar = 2;
 
+// An If statement is a block
 if (true) {
-   const y = 200;
-   console.log(x + y);
+  console.log(x);
+  const y = 200;
+  console.log(x + y);
 }
-// console.log(x + y); Doesnt work because Y is not global
 
+// console.log(y); // ReferenceError: y is not defined
+
+// A loop is a block
 for (let i = 0; i <= 10; i++) {
-   console.log(i);
+  console.log(i);
 }
-// console.log(i); Doesnt work because i is not global
 
+// console.log(i); // ReferenceError: i is not defined
+
+// Using var
 if (true) {
-   const a = 500;
-   let b = 600;
-   var c = 700;
+  const a = 500;
+  let b = 600;
+  var c = 700;
 }
-console.log(c); // Var is not block scoped.You can use global
 
+console.log(c);
+
+// var IS function scoped
 function run() {
-   var d = 100;
-   console.log(d);
+  var d = 100;
+  console.log(d);
 }
+
 run();
-// console.log(d); Doesnt work on function
+
+// console.log(d);
+
+
+const foo = 1;
+var bar = 2; // Put on the window object
